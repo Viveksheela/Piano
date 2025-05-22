@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for the piano container */
+.piano-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.piano-container::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 8px;
+}
+
+.piano-container::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 8px;
+}
+
+.piano-container::-webkit-scrollbar-thumb:hover {
+  background: #4338ca;
+}
+
+/* Styles for range input (volume control) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #818cf8;
+  cursor: pointer;
+  border: 2px solid #c7d2fe;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #818cf8;
+  cursor: pointer;
+  border: 2px solid #c7d2fe;
+}
+
+/* Key press animations */
+@keyframes keyPress {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+.key-active {
+  animation: keyPress 0.1s ease;
+}
